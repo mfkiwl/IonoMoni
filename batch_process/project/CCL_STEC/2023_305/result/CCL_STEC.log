@@ -1,0 +1,26 @@
+[2025-05-06 14:02:09.878] [multi_logger] [info] IonoMoni程序启动...
+[2025-05-06 14:02:09.879] [multi_logger] [info] 读取XML成功: D:\IonoMoni\IonoMoni\batch_process\project\CCL_STEC\2023_305\IonoMoni_2023_305_001.xml
+[2025-05-06 14:02:09.879] [multi_logger] [info] 成功读取function字段，内容为：CCL_STEC
+[2025-05-06 14:02:09.899] [multi_logger] [info] 开始运行SMOOTH_STEC功能...
+[2025-05-06 14:02:09.899] [multi_logger] [info] 开始解码观测文件...
+[2025-05-06 14:02:09.899] [multi_logger] [info] 解码观测文件：file://D:\IonoMoni\IonoMoni\batch_process\data\obs\2023\305\aira3050.23o
+[2025-05-06 14:02:10.459] [multi_logger] [warning] [gcoder.cpp:136] Error - GLO BIASES not available! .. aira3050.23o
+[2025-05-06 14:02:10.459] [multi_logger] [info] 成功解码的观测文件数量：1
+[2025-05-06 14:02:10.934] [multi_logger] [info] [AIRA] Selected types: C1=C1C, C2=C2W, L1=L1C, L2=L2W
+[2025-05-06 14:02:12.473] [multi_logger] [info] 测站 AIRA 输出完成
+[2025-05-06 14:02:12.539] [multi_logger] [info] IonoMoni程序结束。
+[2025-05-06 14:02:09.886] [multi_logger] [info] IonoMoni程序启动...
+[2025-05-06 14:02:09.887] [multi_logger] [info] 读取XML成功: D:\IonoMoni\IonoMoni\batch_process\project\CCL_STEC\2023_305\IonoMoni_2023_305_000.xml
+[2025-05-06 14:02:09.887] [multi_logger] [info] 成功读取function字段，内容为：CCL_STEC
+[2025-05-06 14:02:09.907] [multi_logger] [info] 开始运行SMOOTH_STEC功能...
+[2025-05-06 14:02:09.907] [multi_logger] [info] 开始解码观测文件...
+[2025-05-06 14:02:09.907] [multi_logger] [info] 解码观测文件：file://D:\IonoMoni\IonoMoni\batch_process\data\obs\2023\305\abmf3050.23o
+[2025-05-06 14:02:09.908] [multi_logger] [warning] [rinexo3.cpp:726] Warning: Changing BDS-3 C7D/C7P/C7Z to C9D/C9P/C9Z in RINEX 3.04
+[2025-05-06 14:02:09.908] [multi_logger] [warning] [rinexo3.cpp:726] Warning: Changing BDS-3 C7D/C7P/C7Z to C9D/C9P/C9Z in RINEX 3.04
+[2025-05-06 14:02:09.908] [multi_logger] [warning] [rinexo3.cpp:726] Warning: Changing BDS-3 C7D/C7P/C7Z to C9D/C9P/C9Z in RINEX 3.04
+[2025-05-06 14:02:09.908] [multi_logger] [warning] [rinexo3.cpp:726] Warning: Changing BDS-3 C7D/C7P/C7Z to C9D/C9P/C9Z in RINEX 3.04
+[2025-05-06 14:02:10.940] [multi_logger] [warning] [gcoder.cpp:136] Warning - Warning: INTERVAL not available! .. abmf3050.23o
+[2025-05-06 14:02:10.940] [multi_logger] [info] 成功解码的观测文件数量：1
+[2025-05-06 14:02:11.386] [multi_logger] [info] [ABMF] Selected types: C1=C1W, C2=C2W, L1=L1C, L2=L2W
+[2025-05-06 14:02:13.517] [multi_logger] [info] 测站 ABMF 输出完成
+[2025-05-06 14:02:13.630] [multi_logger] [info] IonoMoni程序结束。

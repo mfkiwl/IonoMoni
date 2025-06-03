@@ -1,0 +1,84 @@
+[2025-05-06 15:41:45.422] [multi_logger] [info] IonoMoni程序启动...
+[2025-05-06 15:41:45.422] [multi_logger] [info] 读取XML成功: D:\IonoMoni\IonoMoni\batch_process\project\PPP_STEC\2023_305\IonoMoni_2023_305_001.xml
+[2025-05-06 15:41:45.422] [multi_logger] [info] 成功读取function字段，内容为：PPP_STEC
+[2025-05-06 15:41:45.424] [multi_logger] [info] 开始运行PPP_STEC功能...
+[2025-05-06 15:41:46.094] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.094] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.094] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.095] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.296] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.304] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.306] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.314] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.315] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.324] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.325] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.335] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.336] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.347] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.348] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.360] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.361] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.455] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.463] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.464] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.505] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.513] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.514] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.523] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.524] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.533] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.534] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.544] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.544] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.556] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.557] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.569] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.570] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:45.422] [multi_logger] [info] IonoMoni程序启动...
+[2025-05-06 15:41:45.422] [multi_logger] [info] 读取XML成功: D:\IonoMoni\IonoMoni\batch_process\project\PPP_STEC\2023_305\IonoMoni_2023_305_000.xml
+[2025-05-06 15:41:45.422] [multi_logger] [info] 成功读取function字段，内容为：PPP_STEC
+[2025-05-06 15:41:45.424] [multi_logger] [info] 开始运行PPP_STEC功能...
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.091] [multi_logger] [error] [atx.cpp:280] Not defined frequency code I09
+[2025-05-06 15:41:46.286] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.295] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.296] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.304] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.305] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.314] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.315] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.325] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.326] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.337] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.338] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.350] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.351] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.444] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.453] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.454] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.494] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.502] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.503] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.511] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.512] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.521] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.522] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.533] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.534] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.545] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.546] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
+[2025-05-06 15:41:46.558] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R04
+[2025-05-06 15:41:46.559] [multi_logger] [error] [atx.cpp:280] Not defined frequency code R06
