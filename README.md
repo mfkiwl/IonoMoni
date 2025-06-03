@@ -43,7 +43,7 @@ For detailed installation and usage instructions, please refer to the **IonoMoni
 <br>
 
 ## Contributing
-### Contributing
+### Developer
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
 ### Third-Party Libraries
 G-Nut Library (http://www.pecny.cz)
