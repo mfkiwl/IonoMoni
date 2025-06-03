@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric Parameter Monitoring and Analysis Software 
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station
 
 ## Overview
 
