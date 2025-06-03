@@ -47,6 +47,17 @@ IonoMoni includes several auxiliary Python scripts that require a Python environ
 For detailed installation and usage instructions, please refer to the **IonoMoni_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
 
+## Visualization
+The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
+```
+./data_aatr      Input folder for AATR plot data
+./data_ccl       Input folder for CCL_STEC plot data
+./data_ppp       Input folder for PPP_STEC plot data
+./data_roti      Input folder for ROTI plot data
+./output         Output folder for plot results
+./PythonScripts  Plot script folder
+```
+
 ## Contributing
 ### Developer
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
@@ -68,15 +79,6 @@ Copyright (C) 2008-2011 Gael Guennebaud.
 
 FAST Source Code (https://github.com/ChangChuntao/FAST)
 Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying and Mapping.
-## Visualization
-The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
-```
-./data_aatr  Input folder for AATR plot data
-./data_ccl
-./data_ppp
-./data_roti
-./output
-./PythonScripts
-```
+
 ## 
 QQ交流群：1049702653
