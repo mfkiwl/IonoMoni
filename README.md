@@ -42,6 +42,28 @@ The ionosphere has a significant impact on Global Navigation Satellite System (G
 For detailed installation and usage instructions, please refer to the **IonoMoni_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
 
+## Contributing
+# Contributing
+Research group of Henan University, UPC-Ionsat, Zhengzhou University.
+# Third-Party Libraries
+G-Nut Library (http://www.pecny.cz)
+Copyright (C) 2011-2016 GOP - Geodetic Observatory Pecny, RIGTC.
+
+pugixml Library (http://pugixml.org)
+Copyright (C) 2006-2014 Arseny Kapoulkine.
+
+Newmat Library (http://www.robertnz.net/nm_intro.htm)
+Copyright (C) 2008: R B Davies.
+
+spdlog Library (https://github.com/gabime/spdlog)
+Copyright (c) 2015-present, Gabi Melman & spdlog contributors.
+
+Eigen Library (https://eigen.tuxfamily.org)
+Copyright (C) 2008-2011 Gael Guennebaud.
+
+FAST Source Code (https://github.com/ChangChuntao/FAST)
+Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying and Mapping.
+## Installation and Usage
 
 ## 
 QQ交流群：1049702653
