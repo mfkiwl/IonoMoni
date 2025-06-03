@@ -61,6 +61,7 @@ The Python plotting scripts provided with IonoMoni support multi-station plottin
 ## Contributing
 ### Developer
 Yuzhi Zhang, Yihong Zhang, Qi Liu, Manuel Hernández-Pajares, Enric Monte-Moreno
+<br>
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
 
 ### Third-Party Libraries
@@ -86,6 +87,9 @@ Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying a
 
 ## Getting in touch
 You can contact us for bug reports and comments by sending an email or leaving a message on our website:
+<br>
 Email: pride@whu.edu.cn
+<br>
 For Chinese users, we provide Tencent QQ Group service.
+<br>
 QQ group：1049702653
