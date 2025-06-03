@@ -65,7 +65,8 @@ Yuzhi Zhang, Yihong Zhang, Qi Liu, Manuel Hernández-Pajares, Enric Monte-Moreno
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
 
 ### Third-Party Libraries
-GREAT-PVT library
+GREAT-PVT library 
+Copyright (C) GNSS + REsearch, Application and Teaching (GREAT) Group, School of Geodesy and Geomatics, Wuhan University
 
 G-Nut Library (http://www.pecny.cz)
 Copyright (C) 2011-2016 GOP - Geodetic Observatory Pecny, RIGTC.
@@ -88,7 +89,7 @@ Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying a
 ## Getting in touch
 You can contact us for bug reports and comments by sending an email or leaving a message on our website:
 <br>
-Email: pride@whu.edu.cn
+Email: qi.liu@henu.edu.cn
 <br>
 For Chinese users, we provide Tencent QQ Group service.
 <br>
