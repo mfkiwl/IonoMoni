@@ -60,7 +60,9 @@ The Python plotting scripts provided with IonoMoni support multi-station plottin
 
 ## Contributing
 ### Developer
+Yuzhi Zhang, Yihong Zhang, Qi Liu, Manuel Hernández-Pajares, Enric Monte-Moreno
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
+
 ### Third-Party Libraries
 GREAT-PVT library
 
