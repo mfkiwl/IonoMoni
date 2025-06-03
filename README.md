@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station by Henan University
 
 ## Overview
 
