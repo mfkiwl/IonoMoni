@@ -33,11 +33,16 @@ The ionosphere has a significant impact on Global Navigation Satellite System (G
 ./CMakePresets.json      CMake build preset settings *
 ```
 
-
+## Environmental Requirements
+### Environment
+The executable CUI AP for Windows in the package was built using Microsoft Visual Studio 2022 on Windows 11 (64-bit), with the ReleaseWithXml configuration. All required dynamic link libraries are included in the directory.
+### License
+IonoMoni is released as open-source software under the GNU General Public License, version 3 (GPLv3). This license permits anyone to use, modify, and redistribute the software, provided that the same license terms are preserved and the source code remains accessible.
+For detailed information, please refer to the full license text at: https://www.gnu.org/licenses/gpl-3.0.html.
+### Python version
+IonoMoni includes several auxiliary Python scripts that require a Python environment and a set of dependencies listed in the requirements.txt file. For optimal compatibility, Python version 3.13 is recommended. It is further advised to use a virtual environment manager, such as Conda or venv, to ensure reproducibility and isolate dependencies.
 
 ## Installation and Usage
-
-
 
 For detailed installation and usage instructions, please refer to the **IonoMoni_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
@@ -63,7 +68,15 @@ Copyright (C) 2008-2011 Gael Guennebaud.
 
 FAST Source Code (https://github.com/ChangChuntao/FAST)
 Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying and Mapping.
-## Installation and Usage
-
+## Visualization
+The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
+```
+./data_aatr  Input folder for AATR plot data
+./data_ccl
+./data_ppp
+./data_roti
+./output
+./PythonScripts
+```
 ## 
 QQ交流群：1049702653
