@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station by Henan University
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station by Henan University v1.0
 
 ## Overview
 
@@ -34,7 +34,7 @@ The ionosphere has a significant impact on Global Navigation Satellite System (G
 ```
 
 ## Environmental Requirements
-### Environment
+### Developer Environment
 The executable CUI AP for Windows in the package was built using Microsoft Visual Studio 2022 on Windows 11 (64-bit), with the ReleaseWithXml configuration. All required dynamic link libraries are included in the directory.
 ### License
 IonoMoni is released as open-source software under the GNU General Public License, version 3 (GPLv3). This license permits anyone to use, modify, and redistribute the software, provided that the same license terms are preserved and the source code remains accessible.
@@ -80,5 +80,8 @@ Copyright (C) 2008-2011 Gael Guennebaud.
 FAST Source Code (https://github.com/ChangChuntao/FAST)
 Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying and Mapping.
 
-## 
-QQ交流群：1049702653
+## Getting in touch
+You can contact us for bug reports and comments by sending an email or leaving a message on our website:
+Email: pride@whu.edu.cn
+For Chinese users, we provide Tencent QQ Group service.
+QQ group：1049702653
