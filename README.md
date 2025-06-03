@@ -14,5 +14,29 @@ Ionospheric delay is one of the primary error sources affecting Global Navigatio
 - Compatible with both Rinex 2.x and Rinex 3.x file formats
 - Includes batch processing and plotting capabilities for efficient extraction and visualization of ionospheric parameters across multiple stations and days
 
+## Directory Structure
 
+```
+./bin                   The executable binary applications for Windows *
+./src                   IonoMoni source programs *
+./include               IonoMoni header files *
+./lib                   Static libraries and export files *
+./build_resources       Dynamic link libraries and sample data *
+./batch_process         Batch processing Python scripts *
+./plot                  Plotting Python scripts *
+./poleut1               Earth Orientation Parameters (EOP) generation program *
+./doc                   Document files *
+  IonoMoni_User_Manual.pdf    User manual *
+  sample_config.xml           Sample XML configuration file *
+./CMakeLists.txt         CMake build configuration file *
+./CMakePresets.json      CMake build preset settings *
+```
+
+
+
+## Installation and Usage
+
+
+
+For detailed installation and usage instructions, please refer to the **IonoMoni_manual_\<ver\>.pdf** document included in the `./doc` directory.
 QQ交流群：1049702653
