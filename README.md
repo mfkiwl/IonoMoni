@@ -29,8 +29,8 @@ The project adopts CMake as the build system, which is primarily used to organiz
 ./plot                  Plotting Python scripts *
 ./poleut1               Earth Orientation Parameters (EOP) generation program *
 ./doc                   Document files *
-  IonoMoni_User_Manual.pdf    User manual *
-  sample_config.xml           Sample XML configuration file *
+  lonoMoni user manual v1.0.pdf    User manual *
+  lonoMoni.xml           Sample XML configuration file *
 ./CMakeLists.txt         CMake build configuration file *
 ./CMakePresets.json      CMake build preset settings *
 ```
