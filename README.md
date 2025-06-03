@@ -46,7 +46,7 @@ IonoMoni includes several auxiliary Python scripts that require a Python environ
 
 ## Installation and Usage
 
-For detailed installation and usage instructions, please refer to the **IonoMoni_manual_\<ver\>.pdf** document included in the `./doc` directory.
+For detailed installation and usage instructions, please refer to the **IonoMoni_user_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
 
 ## Visualization
