@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station by Henan University v1.0
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station v1.0 by Henan University (last update: 2025-06-03)
 
 ## Overview
 
@@ -62,6 +62,8 @@ The Python plotting scripts provided with IonoMoni support multi-station plottin
 ### Developer
 Research group of Henan University, UPC-Ionsat, Zhengzhou University.
 ### Third-Party Libraries
+GREAT-PVT library
+
 G-Nut Library (http://www.pecny.cz)
 Copyright (C) 2011-2016 GOP - Geodetic Observatory Pecny, RIGTC.
 
