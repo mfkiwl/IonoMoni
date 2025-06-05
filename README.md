@@ -51,7 +51,7 @@ For detailed installation and usage instructions, please refer to the **IonoMoni
 
 ## Changelog
 [1.0.0] - 2025-06-05
-Excluded data with missing DCB values from calculations in the STEC module.
+Fixing Bug: Excluded data with missing DCB values from calculations in the STEC module.
 
 ## Visualization
 The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
