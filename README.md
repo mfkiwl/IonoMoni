@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station v1.0 by Henan University (last update: 2025-06-03)
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station v1.0 by Henan University (last update: 2025-06-05)
 
 ## Overview
 
@@ -48,6 +48,10 @@ IonoMoni includes several auxiliary Python scripts that require a Python environ
 
 For detailed installation and usage instructions, please refer to the **IonoMoni_user_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
+
+## Changelog
+[1.0.0] - 2025-06-05
+Excluded data with missing DCB values from calculations in the CCL_STEC module.
 
 ## Visualization
 The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
