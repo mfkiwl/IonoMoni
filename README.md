@@ -1,4 +1,4 @@
-# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station v1.0 by Henan University (last update: 2025-06-03)
+# IonoMoni: Ionospheric monitoring based on dual-frequency data from single GNSS station v1.0 by Henan University (last update: 2025-06-05)
 
 ## Overview
 
@@ -8,8 +8,8 @@ The project adopts CMake as the build system, which is primarily used to organiz
 
 ## Key Features
 
-- Supports STEC extraction using the dual-frequency carrier-to-code leveling (CCL) method
-- Supports STEC extraction based on the undifferenced and uncombined precise point positioning (UCPPP) method
+- Supports STEC extraction for both ground and spaceborne receiversusing the dual-frequency carrier-to-code leveling (CCL) method 
+- Supports STEC extraction for both ground and spaceborne receivers based on the undifferenced and uncombined precise point positioning (UCPPP) method 
 - Supports VTEC conversion based on ionospheric mapping function and STEC
 - Supports the calculation of the Rate of TEC Index (ROTI), a widely used indicator for detecting ionospheric irregularities of ionospheric diffractive effects
 - Supports the estimation of the Along Arc TEC Rate (AATR), an effective metric for monitoring ionospheric disturbances, especially during geomagnetic storms or in equatorial and polar regions
@@ -48,6 +48,10 @@ IonoMoni includes several auxiliary Python scripts that require a Python environ
 
 For detailed installation and usage instructions, please refer to the **IonoMoni_user_manual_\<ver\>.pdf** document included in the `./doc` directory.
 <br>
+
+## Changelog
+[1.0.0] - 2025-06-05
+Fixing Bug: Excluded data with missing DCB values from calculations in the STEC module.
 
 ## Visualization
 The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
