@@ -95,8 +95,8 @@ Copyright (C) The GNSS Center, Wuhan University & Chinese Academy of Surveying a
 ## Getting in touch
 You can contact us for bug reports and comments by sending an email or leaving a message on our website:
 <br>
-Email: qi.liu@henu.edu.cn or 2554923496@qq.com
+Email: qi.liu@henu.edu.cn or Yuzhi.Zhang@henu.edu.cn
 <br>
 For Chinese users, we provide Tencent QQ Group service.
-<br>
+<br><!--  --><!--  -->
 QQ group：1049702653
