@@ -427,40 +427,6 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
 
     set<string> stations = dynamic_cast<t_gsetgen*>(&gset)->recs();
 
-    //// debug_output
-    //{
-    //    std::ofstream fout("obs_debug_output.txt");
-    //    if (!fout.is_open()) {
-    //        my_logger->warn("Unable to open obs_debug_output.txt for writing!");
-    //    }
-    //    else {
-    //        auto sites = gobs->stations();
-    //        for (const auto& site : sites) {
-    //            fout << "== Site: " << site << " ==" << std::endl;
-    //            auto epochs = gobs->epochs(site);
-    //            for (const auto& epo : epochs) {
-    //                fout << "[Epoch] " << epo.str_ymdhms() << "\n";
-    //               
-    //                auto sat_obs = gobs->obs(site, epo);
-    //                for (const auto& satdata : sat_obs) {
-    //                    std::string prn = satdata.sat();
-    //                    fout << "  PRN: " << prn << " | ";
-    //                
-    //                    auto obs_types = satdata.obs();
-    //                    for (const auto& obs_type : obs_types) {
-    //                        double val = satdata.getobs(obs_type); 
-    //                        fout << gobs2str(obs_type) << "=" << std::setprecision(3) << val << "  ";
-    //                    }
-    //                    fout << "\n";
-    //                }
-    //            }
-    //            fout << "\n";
-    //        }
-    //        fout.close();
-    //        my_logger->info("O file decode debug info saved: obs_debug_output.txt");
-    //    }
-    //}
-
     for (const auto& station : stations)
     {
         if (!gobs->isSite(station))
@@ -572,6 +538,7 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
                 //    orig_code1 = code_type;
                 //    orig_code2 = "";
                 //}
+                
                 // Remove spaces
                 auto trim = [](std::string s) {
                     s.erase(s.find_last_not_of(" \n\r\t") + 1);
@@ -585,7 +552,6 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
                 std::string dcb_code1 = map_code(sys, orig_code1);
                 std::string dcb_code2 = map_code(sys, orig_code2);
                 std::string dcb_code_pair = dcb_code1 + dcb_code2;
-                //std::string satKey = sys + prn_num + "_" + dcb_code_pair;               // eg: G10_C1WC2W
                 std::string satKey;
                 if (sys == "G") {
                     satKey = sys + prn_num + "_C1WC2W";
@@ -593,23 +559,11 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
                 else if (sys == "R") {
                     satKey = sys + prn_num + "_C1PC2P";
                 }
-                //else if (sys == "E") {
-                //    satKey = sys + prn_num + "_C1XC5X";
-                //}
-                //else if (sys == "C") {
-                //    satKey = sys + prn_num + "_C2IC6I";  
-                //}
-                else {
-                    satKey = sys + prn_num + "_" + dcb_code_pair;
-                }
-
              
                 std::string recKey = sys + "_" + station + "_" + dcb_code_pair;        // eg: G_ABPO_C1WC2W
 
                 bool recDCB_found = (receiverDCBMap.find(recKey) != receiverDCBMap.end());
                 bool satDCB_found = (satelliteDCBMap.find(satKey) != satelliteDCBMap.end());
-
-
 
                 if (!recDCB_found) {
                     if (reportedRecKeys.find(recKey) == reportedRecKeys.end()) {
@@ -659,8 +613,7 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
                         double recDCB = receiverDCBMap.at(recKey);
                         double dcb_total_ns = recDCB;  
                         double dcb_total_m = dcb_total_ns * 1e-9 * c;
-                        value = value + ((f2 * f2) / (f1 * f1 - f2 * f2)) * dcb_total_m;
-                     
+                        value = value + ((f2 * f2) / (f1 * f1 - f2 * f2)) * dcb_total_m;          
                         //my_logger->info("Epoch {} PRN {} code {}: satDCB={} ns, recDCB={} ns, dcb_total_m={} m, corrected_value={}",
                         //    epo.str_ymdhms(), prn, code_type, satDCB, recDCB, dcb_total_m, value);
                     }
@@ -673,10 +626,6 @@ void run_ppp_stec(t_gcfg_ppp& gset, shared_ptr<spdlog::logger> my_logger)
                         int sat_num = stoi(prn.substr(1));
                         int seconds_of_day = static_cast<int>(epo.sod());
                         int epoch_index = seconds_of_day / 30 + 1;
-
-                        //std::ofstream code_log("used_code_per_epoch.txt", std::ios::app);
-                        //code_log << epo.str_ymdhms() << "," << prn << "," << code_type << "," << value << std::endl;
-                        //code_log.close();
 
                         if (epoch_index >= 1 && epoch_index <= 2880) {
                             if (sys == 'G' && sat_num > 0 && sat_num < 33) {

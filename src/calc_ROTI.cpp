@@ -107,8 +107,6 @@ void calc_roti_GPS(const obs& OBS, const std::string& stationName, const sp3& SP
     rot.close();
 }
 
-
-
 //// Calculate S4C scintillation index for S1 and S2 channels
 //// OBS: observation data, numSats: number of satellites, numEpochs: number of epochs
 //// n: window size, outS1/outS2: output file paths for S1 and S2

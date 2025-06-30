@@ -4,7 +4,7 @@
 void extract_arcs(const double* array, int len, std::vector<std::vector<int>>& arcs, int& num_arcs) {
 
     std::vector<double> vec(array, array + len);
-    vec.erase(vec.begin());      // Remove first (dummy) element
+    vec.erase(vec.begin());      
     len = vec.size();
 
     arcs.clear();

@@ -18,8 +18,6 @@ void calc_aatr_GPS(obs& OBS, const std::string& stationName, sp3 SP3[], const st
     double f2 = 1227.6e6;
     double lambda_wl = 299792458 / (f1 - f2);
     double MW[33][2881], GF[33][2881], wlAmb[33][2881];
-    double GPSP4[35][3000], GPS_smoothedP4[35][3000];
-    double GPSL4[35][3000];
     double AATR_LGF[35][3000];
     double AATR_ROT[33][2888];
     double cs_epoch[33][2881];
@@ -352,7 +350,7 @@ void calc_aatr_GAL(obs& OBS, const std::string& stationName, sp3 SP3[], const st
         }
 
         std::string rot_unit = gset.rot_unit();
-        std::transform(rot_unit.begin(), rot_unit.end(), rot_unit.begin(), ::tolower);  // 转小写
+        std::transform(rot_unit.begin(), rot_unit.end(), rot_unit.begin(), ::tolower);  
         double rotNumber;
 
         if (rot_unit == "sec") {

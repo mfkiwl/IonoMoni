@@ -40,20 +40,6 @@ void clean_short_arcs(std::vector<std::vector<int>>& arcs, obs& OBS, int i, int 
     }
 }
 
-//void carrier_smooth_pseudorange(double smoothedP4[], double L4[], int ARCS[][2], int arc_count) {
-//    // Carrier smoothing for pseudorange using phase difference
-//    for (int j = 1; j <= arc_count; j++) {
-//        int t = 2;
-//        for (int k = ARCS[j][0] + 1; k <= ARCS[j][1]; k++) {
-//            smoothedP4[k] = smoothedP4[k] / t + (smoothedP4[k - 1] + L4[k - 1] - L4[k]) * (t - 1) / t;
-//            t++;
-//        }
-//        for (int k = ARCS[j][0]; k <= ARCS[j][0] + 4; k++) {
-//            smoothedP4[k] = 0;
-//        }
-//    }
-//}
-
 void split_and_filter_arcs(double* MW, int sat_index, int arc_min_len,
     int ARCS[][3000][2], obs& OBS) {
     // Find arcs and remove short segments
@@ -298,7 +284,6 @@ void output_smoothed_vtec_txt_GLO(
     fout.close();
 }
 
-
 void G_prepro(
     obs& OBS,
     const std::string& stationName,
@@ -310,7 +295,6 @@ void G_prepro(
     int mf_type, 
     std::shared_ptr<spdlog::logger> my_logger
 ) {
-    // -------- Main pre-processing workflow for GPS STEC extraction --------
     double f1 = 1575.42e6, f2 = 1227.6e6;
     double lambda_wl = c / (f1 - f2);
     double MW[33][2881], GF[33][2881], wlAmb[33][2881];
