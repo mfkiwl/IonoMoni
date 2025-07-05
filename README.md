@@ -8,9 +8,9 @@ The project adopts CMake as the build system, which is primarily used to organiz
 
 ## Key Features
 
-- Supports STEC extraction for both ground and spaceborne receiversusing the dual-frequency carrier-to-code leveling (CCL) method 
+- Supports STEC (Slant Total Electron Content) extraction for both ground and spaceborne receivers using the dual-frequency carrier-to-code leveling (CCL) method 
 - Supports STEC extraction for both ground and spaceborne receivers based on the undifferenced and uncombined precise point positioning (UCPPP) method 
-- Supports VTEC conversion based on ionospheric mapping function and STEC
+- Supports VTEC (Vertical Total Electron Content) conversion based on ionospheric mapping function and STEC
 - Supports the calculation of the Rate of TEC Index (ROTI), a widely used indicator for detecting ionospheric irregularities of ionospheric diffractive effects
 - Supports the estimation of the Along Arc TEC Rate (AATR), an effective metric for monitoring ionospheric disturbances, especially during geomagnetic storms or in equatorial and polar regions
 - Supports processing of multi-GNSS observation, including GPS, BDS, Galileo, and GLONASS constellations
