@@ -54,7 +54,7 @@ For detailed installation and usage instructions, please refer to the **IonoMoni
 Fixing Bug: Excluded data with missing DCB values from calculations in the STEC module.
 
 [1.0.1] - 2025-07-29
-- Added "arc mean" algorithm for carrier-phase smoothing of pseudorange in the CCL_STEC module. The smoothing method can now be selected ("hatch" or "arc_mean") via the <smoothing> parameter.
+Added "arc mean" algorithm for carrier-phase smoothing of pseudorange in the CCL_STEC module. The smoothing method can now be selected ("hatch" or "arc_mean") via the <smoothing> parameter.
 
 
 ## Visualization
