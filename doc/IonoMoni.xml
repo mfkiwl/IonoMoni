@@ -98,6 +98,7 @@
 		<ion_height>             350000             </ion_height><!--> height of the ionospheric layer (in meters) <!-->
 		<mapping_function>       0                  </mapping_function><!--> type of mapping function used for VTEC conversion (0=SLM, 1=MSLM, 2=F_K, 3=Ou, 4=Fanselow) <!-->
 		<minimum_elev>           7                  </minimum_elev><!--> cut-off satellite elevation(deg) <!<!-->
+        <smoothing>              arc_mean           </smoothing><!-- smoothing method for carrier-phase smoothing of pseudorange: "arc_mean" for arc-based mean, "hatch" for Hatch filter smoothing -->
 
 		<phase>                  true               </phase>  <!--> use phase obs (true/false) <!-->
         <tropo>                  true               </tropo>  <!--> estimate trop param (true/false) <!-->
