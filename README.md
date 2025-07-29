@@ -52,11 +52,8 @@ For detailed installation and usage instructions, please refer to the **IonoMoni
 ## Changelog
 [1.0.0] - 2025-06-05
 Fixing Bug: Excluded data with missing DCB values from calculations in the STEC module.
-
 [1.0.1] - 2025-07-29
-Added "arc mean" algorithm for carrier-phase smoothing of pseudorange in the CCL_STEC module. The smoothing method can now be selected ("hatch" or "arc_mean") via the <smoothing> parameter.
-
-
+Feature: Added "arc mean" algorithm for STEC extraction using the dual-frequency Carrier-to-Code Leveling method in the CCL_STEC module. The smoothing method ("hatch" or "arc_mean") is now controlled by the <smoothing> parameter in the XML configuration. 
 ## Visualization
 The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
 ```
