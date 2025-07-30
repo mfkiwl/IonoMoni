@@ -8,7 +8,7 @@ The project adopts CMake as the build system, which is primarily used to organiz
 
 ## Key Features
 
-- Supports STEC (Slant Total Electron Content) extraction for both ground and spaceborne receivers using the dual-frequency carrier-to-code leveling (CCL) method 
+- Supports STEC (Slant Total Electron Content) extraction for both ground and spaceborne receivers using the dual-frequency carrier-to-code leveling (CCL) method in real-time (hatch) and post-processing (arc average) mode.
 - Supports STEC extraction for both ground and spaceborne receivers based on the undifferenced and uncombined precise point positioning (UCPPP) method 
 - Supports VTEC (Vertical Total Electron Content) conversion based on ionospheric mapping function and STEC
 - Supports the calculation of the Rate of TEC Index (ROTI), a widely used indicator for detecting ionospheric irregularities of ionospheric diffractive effects
@@ -54,7 +54,7 @@ For detailed installation and usage instructions, please refer to the **IonoMoni
 Fixing Bug: Excluded data with missing DCB values from calculations in the STEC module.
 
 [1.0.1] - 2025-07-29
-Feature: Added "arc mean" algorithm for STEC extraction using the dual-frequency Carrier-to-Code Leveling method in the CCL_STEC module. The smoothing method ("hatch" or "arc_mean") is now controlled by the <smoothing> parameter in the XML configuration. 
+Feature: Added "arc_average" algorithm for STEC extraction using the dual-frequency Carrier-to-Code Leveling method in the CCL_STEC module. The smoothing method ("hatch" or "arc_mean") is now controlled by the <smoothing> parameter in the XML configuration. 
 ## Visualization
 The Python plotting scripts provided with IonoMoni support multi-station plotting for a single day. The directory structure under the plot folder is as follows:
 ```
