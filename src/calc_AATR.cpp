@@ -498,7 +498,7 @@ void calc_aatr_BDS(obs& OBS, const std::string& stationName, bool isC7IAllZero, 
         }
 
         std::string rot_unit = gset.rot_unit();
-        std::transform(rot_unit.begin(), rot_unit.end(), rot_unit.begin(), ::tolower);  // 转小写
+        std::transform(rot_unit.begin(), rot_unit.end(), rot_unit.begin(), ::tolower);
         double rotNumber;
 
         if (rot_unit == "sec") {
