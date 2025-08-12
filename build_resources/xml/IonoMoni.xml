@@ -36,7 +36,7 @@
     <outputs append="false" verb="0">  <!--> output file：whether append & verb：the larger the value，the more detailed the output log. <!-->
         <log type="CONSOLE" name="ppp" level="WARN"/>  <!--> log file <!-->
         <ppp> .\result\$(rec)-PPP </ppp>  <!--> ppp log file <!-->
-        <flt> .\result\$(rec)-PPP_sta_DF_Fixed.flt </flt>  <!--> result file <!-->
+        <flt> .\result\$(rec)-PPP_sta_DF_Float.flt </flt>  <!--> result file <!-->
 		<txt> .\result\$(function)\$(rec).txt </txt>
     </outputs>
 
