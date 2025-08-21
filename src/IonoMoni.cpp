@@ -920,9 +920,9 @@ void run_roti(t_gcfg_ppp& gset, std::shared_ptr<spdlog::logger> my_logger)
             }
         }
 
-        t_gtime beg = dynamic_cast<t_gsetgen*>(&gset)->beg();
-        int hourWanted = std::clamp(beg.hour() + 1, 1, 24);
-        sp3_1s H1;
+        //t_gtime beg = dynamic_cast<t_gsetgen*>(&gset)->beg();
+        //int hourWanted = std::clamp(beg.hour() + 1, 1, 24);
+        //sp3_1s H1;
 
         processSP3(SP3);// Place SP3 after SP3_1S to avoid polluting SP3
 
@@ -933,17 +933,17 @@ void run_roti(t_gcfg_ppp& gset, std::shared_ptr<spdlog::logger> my_logger)
             std::vector<std::string> GPS_sats;
             bool isC1WAllZero = true;
             extract_GPS_obs(gobs, station, C1, C2, L1, L2, epochs, sats, isC1WAllZero, my_logger, OBS);
-            extract_GPS_SNR(gobs, station, GPS_S1, GPS_S2, epochs, GPS_sats, my_logger, OBS);
+            //extract_GPS_SNR(gobs, station, GPS_S1, GPS_S2, epochs, GPS_sats, my_logger, OBS);
             apply_elevation_mask(OBS, SP3[1], elevCutoffDeg, 32, 'G');
             calc_roti_GPS(OBS, stationName, SP3[1], isC1WAllZero, txt_output_path, gset);
 
-            if (!interpolateHour1Hz_GPS_to(SP3, hourWanted, H1)) {
-            }
-            apply_elevation_mask_for_S4C(
-                OBS, H1, elevCutoffDeg, 32,
-                "" // eg "debug_elev_S4C.txt"，or "" with nothing
-            );
-            calc_S4C(OBS, 32, 3600, 60, 60, txt_output_path, "GPS", hourWanted);
+            //if (!interpolateHour1Hz_GPS_to(SP3, hourWanted, H1)) {
+            //}
+            //apply_elevation_mask_for_S4C(
+            //    OBS, H1, elevCutoffDeg, 32,
+            //    "" // eg "debug_elev_S4C.txt"，or "" with nothing
+            //);
+            //calc_S4C(OBS, 32, 3600, 60, 60, txt_output_path, "GPS", hourWanted);
         }
 
         if (sys_str.find("BDS") != std::string::npos) {
