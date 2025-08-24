@@ -9,7 +9,20 @@
 using namespace std;
 using namespace gnut;
 
+
+//map epoch time to a row index
+static inline int epoch_row_from_time(const t_gtime& t, int step_sec = 30)
+{
+    double sod = t.sod();
+    int row = int(std::llround(sod / step_sec)) + 1;
+    if (row < 1) row = 1;
+    if (row > 86400 / step_sec) row = 86400 / step_sec;
+    return row;
+}
+
+
 namespace gnut {
+
     void extract_GPS_obs(t_gallobs* gobs, const std::string& station,
         std::vector<std::vector<double>>& GPS_C1,
         std::vector<std::vector<double>>& GPS_C2,
@@ -173,36 +186,34 @@ namespace gnut {
         if (chosen_L1.empty()) logger->warn("[{}] No L1 observation type found!", station);
         if (chosen_L2.empty()) logger->warn("[{}] No L2 observation type found!", station);
 
-        // Fill C1/C2/L1/L2 arrays for all satellites and epochs
         for (size_t i = 0; i < std::min<size_t>(all_epochs.size(), num_epochs - 1); ++i)
         {
             const t_gtime& epo = all_epochs[i];
-            std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
+            int row = epoch_row_from_time(epo, 30);
 
+            auto obsvec = gobs->obs(station, epo);
             for (const auto& obs : obsvec)
             {
                 std::string prn = obs.sat();
                 if (prn[0] != 'G') continue;
 
-                // Find satellite index in GPS_sats vector
                 auto it = std::find(GPS_sats.begin(), GPS_sats.end(), prn);
                 if (it == GPS_sats.end()) continue;
                 size_t j = std::distance(GPS_sats.begin(), it) + 1;
-                if (j >= num_sats) continue;
 
                 const auto& GFst = obs.obs();
 
                 if (!chosen_C1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C1)) != GFst.end())
-                    GPS_C1[i + 1][j] = obs.getobs(str2gobs(chosen_C1));
+                    GPS_C1[row][j] = obs.getobs(str2gobs(chosen_C1));
 
                 if (!chosen_C2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C2)) != GFst.end())
-                    GPS_C2[i + 1][j] = obs.getobs(str2gobs(chosen_C2));
- 
+                    GPS_C2[row][j] = obs.getobs(str2gobs(chosen_C2));
+
                 if (!chosen_L1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L1)) != GFst.end())
-                    GPS_L1[i + 1][j] = obs.getobs(str2gobs(chosen_L1));
+                    GPS_L1[row][j] = obs.getobs(str2gobs(chosen_L1));
 
                 if (!chosen_L2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L2)) != GFst.end())
-                    GPS_L2[i + 1][j] = obs.getobs(str2gobs(chosen_L2));
+                    GPS_L2[row][j] = obs.getobs(str2gobs(chosen_L2));
             }
 
             epochs.push_back(epo);
@@ -217,6 +228,7 @@ namespace gnut {
             }
         }
     }
+
     void extract_BDS_obs(
         t_gallobs* gobs, const std::string& station,
         std::vector<std::vector<double>>& BDS_C2,
@@ -250,9 +262,9 @@ namespace gnut {
             BDS_sats.push_back(oss.str());
         }
 
-        std::vector<std::string> C1_priority = { "C2I", "C2" }; 
+        std::vector<std::string> C1_priority = { "C2I", "C2" };
         std::vector<std::string> C2_priority = { "C6I", "C6I", "C7I", "C7" };
-        std::vector<std::string> L1_priority = { "L2I", "L2" }; 
+        std::vector<std::string> L1_priority = { "L2I", "L2" };
         std::vector<std::string> L2_priority = { "L6I", "L6", "L7I", "L7" };
 
         std::string chosen_C1 = "", chosen_C2 = "", chosen_L1 = "", chosen_L2 = "";
@@ -282,7 +294,7 @@ namespace gnut {
                         }
                     }
                 }
-  
+
                 if (chosen_L1.empty()) {
                     for (const auto& type : L1_priority) {
                         if (std::find(GFst.begin(), GFst.end(), str2gobs(type)) != GFst.end()) {
@@ -317,8 +329,9 @@ namespace gnut {
 
         for (size_t i = 0; i < std::min<size_t>(all_epochs.size(), num_epochs - 1); ++i) {
             const t_gtime& epo = all_epochs[i];
-            std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
+            int row = epoch_row_from_time(epo, 30);
 
+            std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
             for (const auto& obs : obsvec) {
                 std::string prn = obs.sat();
                 if (prn[0] != 'C') continue;
@@ -331,16 +344,16 @@ namespace gnut {
                 const auto& GFst = obs.obs();
 
                 if (!chosen_C1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C1)) != GFst.end())
-                    BDS_C2[i + 1][j] = obs.getobs(str2gobs(chosen_C1));
-  
+                    BDS_C2[row][j] = obs.getobs(str2gobs(chosen_C1));
+
                 if (!chosen_C2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C2)) != GFst.end())
-                    (chosen_C2 == "C6I" ? BDS_C6[i + 1][j] : BDS_C7[i + 1][j]) = obs.getobs(str2gobs(chosen_C2));
+                    (chosen_C2 == "C6I" ? BDS_C6[row][j] : BDS_C7[row][j]) = obs.getobs(str2gobs(chosen_C2));
 
                 if (!chosen_L1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L1)) != GFst.end())
-                    BDS_L2[i + 1][j] = obs.getobs(str2gobs(chosen_L1));
-    
+                    BDS_L2[row][j] = obs.getobs(str2gobs(chosen_L1));
+
                 if (!chosen_L2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L2)) != GFst.end())
-                    (chosen_L2 == "L6I" ? BDS_L6[i + 1][j] : BDS_L7[i + 1][j]) = obs.getobs(str2gobs(chosen_L2));
+                    (chosen_L2 == "L6I" ? BDS_L6[row][j] : BDS_L7[row][j]) = obs.getobs(str2gobs(chosen_L2));
             }
             epochs.push_back(epo);
         }
@@ -360,6 +373,7 @@ namespace gnut {
             }
         }
     }
+
     void extract_GLO_obs(
         t_gallobs* gobs, const std::string& station,
         std::vector<std::vector<double>>& GLO_C1,
@@ -474,8 +488,9 @@ namespace gnut {
 
         for (size_t i = 0; i < std::min<size_t>(all_epochs.size(), num_epochs - 1); ++i) {
             const t_gtime& epo = all_epochs[i];
-            std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
+            int row = epoch_row_from_time(epo, 30);
 
+            std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
             for (const auto& obs : obsvec) {
                 std::string prn = obs.sat();
                 if (prn[0] != 'R') continue;
@@ -488,13 +503,13 @@ namespace gnut {
                 auto GFst = obs.obs();
 
                 if (!chosen_C1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C1)) != GFst.end())
-                    GLO_C1[i + 1][j] = obs.getobs(str2gobs(chosen_C1));
+                    GLO_C1[row][j] = obs.getobs(str2gobs(chosen_C1));
                 if (!chosen_C2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_C2)) != GFst.end())
-                    GLO_C2[i + 1][j] = obs.getobs(str2gobs(chosen_C2));
+                    GLO_C2[row][j] = obs.getobs(str2gobs(chosen_C2));
                 if (!chosen_L1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L1)) != GFst.end())
-                    GLO_L1[i + 1][j] = obs.getobs(str2gobs(chosen_L1));
+                    GLO_L1[row][j] = obs.getobs(str2gobs(chosen_L1));
                 if (!chosen_L2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_L2)) != GFst.end())
-                    GLO_L2[i + 1][j] = obs.getobs(str2gobs(chosen_L2));
+                    GLO_L2[row][j] = obs.getobs(str2gobs(chosen_L2));
             }
             epochs.push_back(epo);
         }
@@ -508,6 +523,7 @@ namespace gnut {
             }
         }
     }
+
     void extract_GAL_obs(t_gallobs* gobs, const std::string& station,
         std::vector<std::vector<double>>& GAL_C1,
         std::vector<std::vector<double>>& GAL_C5,
@@ -517,7 +533,7 @@ namespace gnut {
         std::vector<std::string>& GAL_sats,
         obs& OBS,
         std::shared_ptr<spdlog::logger> logger,
-        bool& isC1QAllZero 
+        bool& isC1QAllZero
     ) {
         const size_t num_epochs = 2881;
         const size_t num_sats = 37;
@@ -565,6 +581,8 @@ namespace gnut {
 
         for (size_t i = 0; i < std::min<size_t>(all_epochs.size(), num_epochs - 1); ++i) {
             const t_gtime& epo = all_epochs[i];
+            int row = epoch_row_from_time(epo, 30);
+
             std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
             for (const auto& obs : obsvec) {
                 std::string prn = obs.sat();
@@ -579,10 +597,10 @@ namespace gnut {
                     return std::find(GFst.begin(), GFst.end(), g) != GFst.end();
                     };
                 GOBS g;
-                if (!chosen_C1.empty()) { g = str2gobs(chosen_C1); if (has(obs, g)) GAL_C1[i + 1][j] = obs.getobs(g); }
-                if (!chosen_C2.empty()) { g = str2gobs(chosen_C2); if (has(obs, g)) GAL_C5[i + 1][j] = obs.getobs(g); }
-                if (!chosen_L1.empty()) { g = str2gobs(chosen_L1); if (has(obs, g)) GAL_L1[i + 1][j] = obs.getobs(g); }
-                if (!chosen_L2.empty()) { g = str2gobs(chosen_L2); if (has(obs, g)) GAL_L5[i + 1][j] = obs.getobs(g); }
+                if (!chosen_C1.empty()) { g = str2gobs(chosen_C1); if (has(obs, g)) GAL_C1[row][j] = obs.getobs(g); }
+                if (!chosen_C2.empty()) { g = str2gobs(chosen_C2); if (has(obs, g)) GAL_C5[row][j] = obs.getobs(g); }
+                if (!chosen_L1.empty()) { g = str2gobs(chosen_L1); if (has(obs, g)) GAL_L1[row][j] = obs.getobs(g); }
+                if (!chosen_L2.empty()) { g = str2gobs(chosen_L2); if (has(obs, g)) GAL_L5[row][j] = obs.getobs(g); }
             }
             epochs.push_back(epo);
         }
@@ -676,6 +694,8 @@ namespace gnut {
             const t_gtime& epo = all_epochs[i];
             std::vector<t_gsatdata> obsvec = gobs->obs(station, epo);
 
+            int row = epoch_row_from_time(epo, 24);
+
             for (const auto& obs : obsvec) {
                 std::string prn = obs.sat();
                 if (prn[0] != 'G') continue;
@@ -688,10 +708,10 @@ namespace gnut {
                 const auto& GFst = obs.obs();
 
                 if (!chosen_S1.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_S1)) != GFst.end())
-                    GPS_S1[i + 1][j] = obs.getobs(str2gobs(chosen_S1));
+                    GPS_S1[row][j] = obs.getobs(str2gobs(chosen_S1));
 
                 if (!chosen_S2.empty() && std::find(GFst.begin(), GFst.end(), str2gobs(chosen_S2)) != GFst.end())
-                    GPS_S2[i + 1][j] = obs.getobs(str2gobs(chosen_S2));
+                    GPS_S2[row][j] = obs.getobs(str2gobs(chosen_S2));
             }
             epochs.push_back(epo);
         }
@@ -726,8 +746,7 @@ namespace gnut {
         //}
         //fout_s2.close();
 
-    }    
+    }
 
-    
-    
-}
+
+} // namespace gnut
